@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DogSalon＆NaturalLife どーなちゅ｜"この子らしさ"を見る、犬基準のサロン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0A1620;
+    --navy:#10202E;
+    --navy-soft:#182B3B;
+    --parchment:#F3ECDD;
+    --parchment-soft:#EDE4D0;
+    --gold:#C7A45D;
+    --gold-light:#E3C687;
+    --ivory:#F4EEE0;
+    --ink:#1E2A33;
+    --line-gold:rgba(199,164,93,0.35);
+    --line-ink:rgba(30,42,51,0.15);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    background:var(--parchment);
+    color:var(--ink);
+    line-height:1.9;
+    letter-spacing:0.02em;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Shippori Mincho', serif;
+    letter-spacing:0.04em;
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:0.28em;
+    color:var(--gold);
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--gold);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(ellipse 120% 90% at 50% 115%, #1a3448 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:var(--ivory);
+    padding:64px 0 72px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .beam{
+    position:absolute;
+    top:-40%;
+    left:50%;
+    width:900px;
+    height:900px;
+    transform:translateX(-50%);
+    background:conic-gradient(from 200deg at 50% 50%,
+      transparent 0deg,
+      rgba(227,198,135,0.16) 8deg,
+      rgba(227,198,135,0.05) 20deg,
+      transparent 34deg,
+      transparent 326deg,
+      rgba(227,198,135,0.05) 340deg,
+      rgba(227,198,135,0.16) 352deg,
+      transparent 360deg);
+    animation: sweep 14s linear infinite;
+    z-index:-1;
+    opacity:0.9;
+  }
+  @keyframes sweep{ to{ transform:translateX(-50%) rotate(360deg); } }
+  .hero-mark{
+    display:flex; justify-content:center; margin-bottom:34px;
+  }
+  .hero-mark svg{width:34px; height:34px; opacity:0.85;}
+  .hero h1{
+    font-size:26px;
+    font-weight:700;
+    line-height:1.75;
+    text-align:center;
+    color:var(--ivory);
+    margin-bottom:26px;
+  }
+  .hero h1 .accent{color:var(--gold-light);}
+  .hero-sub{
+    text-align:center;
+    font-size:14px;
+    color:rgba(244,238,224,0.72);
+    max-width:480px;
+    margin:0 auto 36px;
+    line-height:2.05;
+  }
+  .hero-salon{
+    text-align:center;
+    font-size:12px;
+    letter-spacing:0.18em;
+    color:var(--gold);
+  }
+  .hero-salon span{display:block; color:rgba(244,238,224,0.55); font-size:11px; margin-top:6px; letter-spacing:0.1em;}
+
+  /* ---------- Section generic ---------- */
+  section{ padding:76px 0; position:relative; }
+  .on-dark{ background:var(--navy); color:var(--ivory); }
+  .on-deep{ background:var(--navy-deep); color:var(--ivory); }
+  .on-dark .eyebrow, .on-deep .eyebrow{ color:var(--gold-light); }
+  .on-dark h2, .on-deep h2{ color:var(--ivory); }
+
+  h2{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.7;
+    margin-bottom:28px;
+  }
+  p.lead{ font-size:15px; margin-bottom:18px; }
+  p.lead:last-child{ margin-bottom:0; }
+
+  .divider{
+    display:flex; align-items:center; justify-content:center;
+    gap:14px;
+    padding:8px 0 0;
+  }
+  .divider .ln{ width:44px; height:1px; background:var(--line-gold); }
+  .divider svg{ width:20px; height:20px; opacity:0.6; }
+
+  /* ---------- Problem list ---------- */
+  .signs{
+    list-style:none;
+    margin:26px 0 0;
+    border-top:1px solid var(--line-ink);
+  }
+  .signs li{
+    padding:20px 0;
+    border-bottom:1px solid var(--line-ink);
+    font-size:14.5px;
+    display:flex;
+    gap:14px;
+  }
+  .signs li .no{
+    font-family:'Shippori Mincho', serif;
+    color:var(--gold);
+    font-size:13px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .on-dark .signs, .on-deep .signs{ border-top-color:rgba(227,198,135,0.2); }
+  .on-dark .signs li, .on-deep .signs li{ border-bottom-color:rgba(227,198,135,0.2); }
+
+  .callout{
+    margin-top:30px;
+    padding:22px 24px;
+    border-left:2px solid var(--gold);
+    background:rgba(199,164,93,0.06);
+    font-size:14px;
+    line-height:1.95;
+  }
+  .on-dark .callout, .on-deep .callout{ background:rgba(227,198,135,0.07); }
+
+  /* ---------- Agitation quote block ---------- */
+  .statement{
+    font-family:'Shippori Mincho', serif;
+    font-size:19px;
+    font-weight:600;
+    line-height:2;
+    text-align:center;
+    padding:8px 0 4px;
+  }
+  .statement .weak{
+    display:block;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:400;
+    font-size:13px;
+    color:rgba(244,238,224,0.6);
+    margin-top:18px;
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- Solution / story ---------- */
+  .story-block p{ font-size:14.5px; margin-bottom:20px; }
+  .story-block p:last-of-type{ margin-bottom:0; }
+  .philosophy-line{
+    margin-top:34px;
+    padding:26px 24px;
+    background:var(--navy);
+    color:var(--ivory);
+    text-align:center;
+    font-family:'Shippori Mincho', serif;
+    font-size:17px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    line-height:1.9;
+  }
+  .philosophy-line span{
+    display:block;
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:11px;
+    color:var(--gold-light);
+    letter-spacing:0.2em;
+    margin-bottom:10px;
+    font-weight:400;
+  }
+
+  .sub-eyebrow{
+    margin-top:44px;
+    margin-bottom:22px;
+    font-size:11.5px;
+    letter-spacing:0.16em;
+    color:var(--gold);
+    font-weight:500;
+    text-align:center;
+    position:relative;
+    padding-top:22px;
+  }
+  .sub-eyebrow::before{
+    content:'';
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    width:32px; height:1px;
+    background:var(--line-gold);
+  }
+  .triad{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:32px 0 14px;
+  }
+  .triad span:not(.x){
+    font-family:'Shippori Mincho', serif;
+    font-size:13.5px;
+    font-weight:700;
+    padding:11px 16px;
+    border:1px solid var(--line-gold);
+    color:var(--ink);
+    letter-spacing:0.04em;
+  }
+  .triad .x{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:var(--gold);
+  }
+  .triad-caption{
+    text-align:center;
+    font-size:12.5px;
+    color:#5a6570;
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- Offer cards ---------- */
+  .offer-card{
+    margin-bottom:22px;
+    padding:26px 24px;
+    background:#fff;
+    border:1px solid var(--line-ink);
+  }
+  .offer-card:last-child{ margin-bottom:0; }
+  .offer-tag{
+    font-family:'Shippori Mincho', serif;
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:0.1em;
+    margin-bottom:10px;
+  }
+  .offer-card h3{
+    font-family:'Shippori Mincho', serif;
+    font-size:16.5px;
+    font-weight:700;
+    margin-bottom:12px;
+    line-height:1.6;
+  }
+  .offer-card p{ font-size:13.5px; color:#3a4753; }
+
+  /* ---------- Narrow ---------- */
+  .narrow-grid{ margin-top:30px; }
+  .narrow-col{ margin-bottom:30px; }
+  .narrow-col .label{
+    font-family:'Shippori Mincho', serif;
+    font-size:14px;
+    font-weight:700;
+    color:var(--gold-light);
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(227,198,135,0.3);
+  }
+  .narrow-col ul{ list-style:none; }
+  .narrow-col li{
+    font-size:13.5px;
+    padding:9px 0 9px 20px;
+    position:relative;
+    color:rgba(244,238,224,0.85);
+  }
+  .narrow-col.no li::before{ content:'—'; position:absolute; left:0; color:rgba(244,238,224,0.4); }
+  .narrow-col.yes li::before{ content:'—'; position:absolute; left:0; color:var(--gold-light); }
+  .narrow-declare{
+    margin-top:8px;
+    text-align:center;
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    font-weight:700;
+    color:var(--ivory);
+    line-height:1.9;
+    padding:22px 10px 0;
+  }
+
+  /* ---------- Evidence ---------- */
+  .review{
+    background:#fff;
+    border:1px solid var(--line-ink);
+    padding:26px 24px;
+    margin-bottom:20px;
+  }
+  .review:last-child{ margin-bottom:0; }
+  .review .who{
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    margin-bottom:14px;
+    font-weight:500;
+  }
+  .review .field{ margin-bottom:12px; }
+  .review .field:last-child{ margin-bottom:0; }
+  .review .field b{
+    display:block;
+    font-family:'Shippori Mincho', serif;
+    font-size:11.5px;
+    color:#8a7550;
+    letter-spacing:0.1em;
+    margin-bottom:4px;
+  }
+  .review .field span{ font-size:13.5px; color:#333; }
+
+  /* ---------- Action ---------- */
+  .cta-card{
+    background:var(--navy-soft);
+    border:1px solid rgba(227,198,135,0.25);
+    padding:28px 24px;
+    margin-bottom:20px;
+  }
+  .cta-card:last-child{ margin-bottom:0; }
+  .cta-card .for{
+    font-size:11.5px;
+    letter-spacing:0.1em;
+    color:var(--gold-light);
+    margin-bottom:10px;
+  }
+  .cta-card h3{
+    font-family:'Shippori Mincho', serif;
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:var(--ivory);
+  }
+  .cta-card p{ font-size:13.5px; color:rgba(244,238,224,0.75); margin-bottom:20px; }
+  .btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:15px 20px;
+    font-size:14px;
+    letter-spacing:0.08em;
+    font-weight:500;
+    transition:opacity 0.2s ease;
+  }
+  .btn:hover{ opacity:0.85; }
+  .btn-primary{ background:var(--gold); color:var(--navy-deep); }
+  .btn-secondary{ background:transparent; border:1px solid var(--gold); color:var(--gold-light); }
+
+  footer{
+    background:var(--navy-deep);
+    color:rgba(244,238,224,0.4);
+    text-align:center;
+    padding:36px 28px 44px;
+    font-size:11.5px;
+    letter-spacing:0.06em;
+  }
+  footer .fmark{ margin-bottom:14px; opacity:0.6; }
+
+  @media (prefers-reduced-motion: reduce){
+    .beam{ animation:none; }
+  }
+
+  /* fade-in on scroll */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO / ファーストビュー ============ -->
+<div class="hero">
+  <div class="beam"></div>
+  <div class="wrap">
+    <div class="hero-mark">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 4H23L24 10H16L17 4Z" stroke="#E3C687" stroke-width="1.2"/>
+        <path d="M14 34L16 10H24L26 34" stroke="#E3C687" stroke-width="1.2"/>
+        <path d="M12 34H28" stroke="#E3C687" stroke-width="1.2"/>
+        <path d="M15 20H25" stroke="#E3C687" stroke-width="1"/>
+        <path d="M20 4V1" stroke="#E3C687" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <h1>「同じカット、同じ手順。」<br>それで、<span class="accent">この子</span>に<br>合っていると言えますか？</h1>
+    <p class="hero-sub">
+      多くのサロンが、犬種とオーダーで仕上げを決めています。<br>
+      でも、皮膚も、被毛も、性格も、その日の体調も、<br>
+      本来は一頭ごとに違うはずです。
+    </p>
+    <div class="hero-salon">
+      DogSalon＆NaturalLife どーなちゅ
+      <span>完全予約制・一人運営のドッググルーミングサロン</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ① Problem ============ -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="eyebrow">PROBLEM</div>
+    <h2>効率を優先すれば、<br>見落とされるものがある。</h2>
+    <p class="lead">
+      頭数をこなすことが前提のサロンでは、一頭にかけられる時間も、判断も、どうしても均一化されていきます。
+    </p>
+    <p class="lead">
+      それは決して、誰かが手を抜いているという話ではありません。回転を前提にした仕組みそのものが、そう作られているだけです。
+    </p>
+    <ul class="signs">
+      <li><span class="no">01</span>カットスタイルはオーダー通りでも、表情や仕上がりの"納得感"がどこか違う</li>
+      <li><span class="no">02</span>担当が変わるたびに、対応も見立ても変わる</li>
+      <li><span class="no">03</span>体調や皮膚の変化について、深く聞かれたことがない</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ② Agitation ============ -->
+<section class="on-dark reveal">
+  <div class="wrap">
+    <p class="statement">
+      気づいているのに、<br>「まあ、こんなものか」と<br>流していないでしょうか。
+      <span class="weak">— それは、慣れではなく、違和感かもしれません</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ ③ Problem深化 ============ -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="eyebrow">RISK</div>
+    <h2>その違和感を放置すると、<br>何が起きるか。</h2>
+    <p class="lead">
+      "慣れ"の中で行われるケアでは、皮膚トラブルやストレスの初期サインは見過ごされやすくなります。
+    </p>
+    <p class="lead">
+      信頼して任せているつもりが、実は流れ作業のなかの一頭として処理されているだけかもしれない。それに気づくのは、たいてい状態が進んでからです。
+    </p>
+    <div class="callout">
+      愛犬の小さな変化に気づけるのは、日々そばにいる飼い主様と、専門的な目を持つプロだけです。その"観察の目"が失われたまま歳を重ねていくとしたら、それは静かに、しかし確実に、後から響いてきます。
+    </div>
+  </div>
+</section>
+
+<!-- ============ ④ Agitation強化 ============ -->
+<section class="on-deep reveal">
+  <div class="wrap">
+    <p class="statement">
+      トリミングは、身だしなみではなく、<br>健康状態を定点観測できる<br>数少ない機会です。
+      <span class="weak">— その機会を、仕組みに委ねてしまっていいのか</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ ⑤ Solution ============ -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="eyebrow">PHILOSOPHY</div>
+    <h2>"犬基準"という、<br>判断の軸。</h2>
+    <div class="story-block">
+      <p>
+        初めてトリミングの現場を見たのは、まだ自分の犬を飼ったこともない子どもの頃でした。近所の方に連れられて訪れたサロンで、施術台の上の犬たちの佇まいに、雷に打たれたような衝撃を受けたのを、今でも覚えています。
+      </p>
+      <p>
+        その光景に導かれるようにこの仕事を選びましたが、駆け出しの頃の現実は、まったく違うものでした。学校で教わった通りには、目の前の犬を扱えない。こなさなければならない頭数のなかで、今触れているその子を"ちゃんと"見てあげられない日々。振り返れば、犬に合わせた仕事ではなく、人間の都合に犬を合わせさせていました。
+      </p>
+      <p>
+        それは、犬にとって幸せなことではなかったと、今なら分かります。
+      </p>
+      <p>
+        だから独立してから、私はひとつの基準だけを貫いています。どんなに予約が並ぶ日でも、"この子"は大勢のなかの1匹ではなく、個性も感情もある、唯一の存在として見る。
+      </p>
+    </div>
+    <div class="philosophy-line">
+      <span>DONACHU STANDARD</span>
+      これは理念ではなく、<br>私の判断基準です。
+    </div>
+
+    <div class="sub-eyebrow">そしてもうひとつ、大切にしていること</div>
+    <div class="story-block">
+      <p>
+        独立してから、よく耳にするようになった言葉があります。「わんこファースト」。
+      </p>
+      <p>
+        犬に優しくすることは、トリマーであれば本来当たり前のことです。それでも、あえてこの言葉が掲げられているとしたら、理由があると思っています。多くの頭数を回さなければならない環境のなかで、"本当は一頭一頭に向き合えていない"という現実の裏返しとして、この言葉が生まれているのではないでしょうか。
+      </p>
+      <p>
+        だから、どーなちゅでは、あえて「わんこファースト」とは言いません。
+      </p>
+      <p>
+        私一人が頑張っても、意味がないからです。わんこだけが頑張るのでもありません。
+      </p>
+    </div>
+
+    <div class="triad">
+      <span>飼い主</span><span class="x">×</span><span>わんこ</span><span class="x">×</span><span>どーなちゅ</span>
+    </div>
+    <p class="triad-caption">誰か一人が頑張るのではなく、三者で積み重ねていく関係です。</p>
+
+    <div class="story-block" style="margin-top:26px;">
+      <p>
+        施術の話だけでなく、お家での普段の様子、好きなおやつ、遊びに行った話。トリミングとは関係のない会話も、飼い主様と沢山重ねています。「前回より疲れているみたい」という小さな変化も、そうした会話のなかから見えてくるものです。
+      </p>
+      <p>
+        誰か一人が頑張るのではない関係だからこそ、通うほどに安心が積み重なっていく。その積み重ねが、歳を重ねた時にこそ、その子に寄り添ったトリミングとなって返っていくと考えています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑥ Offer ============ -->
+<section class="on-dark reveal">
+  <div class="wrap">
+    <div class="eyebrow">OFFER</div>
+    <h2>選ばれている理由は、<br>技術の高さだけではありません。</h2>
+
+    <div class="offer-card">
+      <div class="offer-tag">01 — 判断</div>
+      <h3>一律ではなく、個体別判断</h3>
+      <p>シャンプーは犬種で固定せず、その日の皮膚・被毛・体調を見て都度選びます。同じ犬種でも、同じ処方にはしません。</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-tag">02 — 基準</div>
+      <h3>"特別なケア"ではなく、当たり前の基準</h3>
+      <p>ナノバブルオゾンシャワーは、追加オプションではなく標準のケアとして全頭に提供しています。見えない部分にまで手を抜かないための、当たり前の水準です。</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-tag">03 — 対話</div>
+      <h3>報告ではなく、対話</h3>
+      <p>お家での様子や好きなおやつ、遊びに行った話など、施術に関係のない会話も重ねます。そこから見えてくる「いつも」があるから、「前回より疲れている」といった小さな変化にも気づけます。一人で全頭を担当しているからこそ、誰かを介さず、直接お伝えできます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑦ Narrow ============ -->
+<section class="on-deep reveal">
+  <div class="wrap">
+    <div class="eyebrow">FOR WHOM</div>
+    <h2>すべての方に、<br>選んでいただきたいわけではありません。</h2>
+    <p class="lead" style="color:rgba(244,238,224,0.75);">
+      価格や条件だけで選びたい方には、正直向いていません。
+    </p>
+
+    <div class="narrow-grid">
+      <div class="narrow-col yes">
+        <div class="label">こんな方に選ばれています</div>
+        <ul>
+          <li>愛犬を家族として迎えている方</li>
+          <li>過去のトリミングで、なんとなくの物足りなさを感じたことがある方</li>
+          <li>多少の対価を払ってでも、"ちゃんと見てほしい"と考える方</li>
+        </ul>
+      </div>
+      <div class="narrow-col no">
+        <div class="label">向いていない方</div>
+        <ul>
+          <li>価格や安さだけで比較・検討したい方</li>
+          <li>ケージフリーなど、表面的な条件だけで判断したい方</li>
+          <li>犬の状態より、見た目の効率や早さを優先したい方</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="narrow-declare">
+      誰にでも合うサロンを<br>目指してはいません。<br>合う方だけに、深く向き合いたいと思っています。
+    </p>
+  </div>
+</section>
+
+<!-- ============ ⑧ Evidence ============ -->
+<section class="reveal">
+  <div class="wrap">
+    <div class="eyebrow">EVIDENCE</div>
+    <h2>実際に通われている方の変化。</h2>
+
+    <div class="review">
+      <div class="who">ミニチュアダックス・マルチーズをお世話中のオーナー様</div>
+      <div class="field"><b>変化</b><span>お店に着いた瞬間から、わんこ自身が喜んで駆け込むように。</span></div>
+      <div class="field"><b>エピソード</b><span>施術後には毎回かわいい様子の写真が届き、体調面への気遣いも感じられるため、安心して任せられている。</span></div>
+      <div class="field"><b>なぜそれが起きたか</b><span>"この子はどう感じているか"を見ているからこそ、犬自身が安心し、飼い主にもその安心が伝わっている。</span></div>
+    </div>
+
+    <div class="review">
+      <div class="who">先代犬の頃から通う長期のお客様</div>
+      <div class="field"><b>変化</b><span>トリミングの相談だけでなく、日々の悩みごとも話せる相手に。</span></div>
+      <div class="field"><b>エピソード</b><span>親切で話しやすく、トリミング以外のことも親身に相談に乗ってもらえている。</span></div>
+      <div class="field"><b>なぜそれが起きたか</b><span>一人で向き合い続けているからこそ、"担当が変わらない"関係が何年も積み重なっている。</span></div>
+    </div>
+
+    <div class="review">
+      <div class="who">毎月通うリピーターのお客様</div>
+      <div class="field"><b>変化</b><span>トリミングそのものが、通うたびの楽しみに変わった。</span></div>
+      <div class="field"><b>エピソード</b><span>毎回変わるブースを背景に、施術後の記念写真を撮ってもらえるのが恒例になっている。</span></div>
+      <div class="field"><b>なぜそれが起きたか</b><span>"作業を終える"のではなく、"その日のその子"を記録し共有するという姿勢が、通う理由になっている。</span></div>
+    </div>
+
+    <div class="review">
+      <div class="who">散歩仲間から褒められるようになったオーナー様</div>
+      <div class="field"><b>変化</b><span>見た目の仕上がりと、健康管理の両方に安心を持てるように。</span></div>
+      <div class="field"><b>エピソード</b><span>可愛いカットで散歩中に褒められるだけでなく、体調チェックや食事のアドバイスまで受けられている。</span></div>
+      <div class="field"><b>なぜそれが起きたか</b><span>カットという結果だけでなく、日々の健康まで含めて見る"犬基準"の姿勢が、信頼につながっている。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑨ Action ============ -->
+<section class="on-dark reveal">
+  <div class="wrap">
+    <div class="eyebrow">ACTION</div>
+    <h2>灯りは、もう見えています。<br>あとは、近づくだけです。</h2>
+
+    <div class="cta-card">
+      <div class="for">相談してから決めたい方へ</div>
+      <h3>LINE公式アカウントに登録する</h3>
+      <p>愛犬の状態やお悩みを、予約の前に直接相談できます。まずは"合うかどうか"を確かめたい方に向いています。</p>
+      <a href="#" class="btn btn-primary">LINEで相談する</a>
+    </div>
+
+    <div class="cta-card">
+      <div class="for">すぐに予約したい方へ</div>
+      <h3>予約ページから申し込む</h3>
+      <p>すでに"この子らしさ"を大切にする方針に納得されている方は、直接ご予約いただけます。</p>
+      <a href="#" class="btn btn-secondary">予約ページへ進む</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fmark">
+    <svg viewBox="0 0 40 40" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto;">
+      <path d="M17 4H23L24 10H16L17 4Z" stroke="#C7A45D" stroke-width="1.2"/>
+      <path d="M14 34L16 10H24L26 34" stroke="#C7A45D" stroke-width="1.2"/>
+      <path d="M12 34H28" stroke="#C7A45D" stroke-width="1.2"/>
+    </svg>
+  </div>
+  DogSalon＆NaturalLife どーなちゅ
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
